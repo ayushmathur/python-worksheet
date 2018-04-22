@@ -14,7 +14,7 @@ class Savings(Account):
         self.intrate=0.04
         self.type="Savings"
     def cacinterest(self):
-        self.interest=self.balance+(float(self.balance)*self.intrate)
+        self.interest=float(self.balance)+(float(self.balance)*self.intrate)
 
 class Current(Account):
     def __init__(self,id=0,name="",email="",mobile=0,balance=0,username=""):
@@ -23,7 +23,7 @@ class Current(Account):
         self.pin=9999
         self.type="Current"
     def calinterest(self):
-        self.interest=self.balance+100
+        self.interest=float(self.balance+100)
 
 def addaccount():
     typ=int(input("Enter the type of account\n1. Savings Account\n2. Current Account\nOr press 9 to go back\n"))
@@ -71,28 +71,62 @@ def deleteaccount():
         deleteaccount()
 
 def deposit():
-    pass
-
+    x=input("Are you sure you want to record a Deposit to an account(y/n)?")
+    if x in ['y','Y']:
+        number=int(input("Enter the account number to be updated: "))
+        amount=float(input("Enter the Amount: "))
+        data[number]['interest'] += amount
+        print("Record updated. New Balance= "+str(data[number]['interest'])+"\n")
+        interface()
+    elif x in ['n','N']:
+        interface()
+    else:
+        print("Incorrect Choice, please try again")
+        deposit()
 def withdrawl():
-    pass
+    x=input("Are you sure you want to record a Withdrawl to an account(y/n)?")
+    if x in ['y','Y']:
+        number=int(input("Enter the account number to be updated: "))
+        amount=float(input("Enter the Amount: "))
+        data[number]['interest'] -= amount
+        print("Record updated. New Balance= "+str(data[number]['interest'])+"\n")
+        interface()
+    elif x in ['n','N']:
+        interface()
+    else:
+        print("Incorrect Choice, please try again")
+        withdrawl()
 
 def transfer():
-    pass
+    x=input("Are you sure you want to record a Transfer between two accounts(y/n)?")
+    if x in ['y','Y']:
+        acc1=int(input("Enter the account number to be debited: "))
+        acc2=int(input("Enter the account number to be cerdited: "))
+        amount=float(input("Enter the Amount to be transfered: "))
+        data[acc1]['interest'] -= amount
+        data[acc2]['interest'] += amount
+        print("Records updated. New Balance:\n"+str(acc1)+" : "+str(data[acc1]['interest'])+"\n"+str(acc2)+" : "+str(data[acc2]['interest'])+"\n")
+        interface()
+    elif x in ['n','N']:
+        interface()
+    else:
+        print("Incorrect Choice, please try again")
+        withdrawl()
 
 def balance():
     x=int(input("Enter account number: "))
-    print("Balance of account "+str(x)+" = "+data[x]['balance']+"\n")
+    print("Balance of account "+str(x)+" = "+str(data[x]['interest'])+"\n")
     interface()
 
 def terminate():
     with open("datarecord.txt",'w') as dfile:
         for key, value  in data.items():
             dfile.write('%s=>%s\n' % (key, value))
-    print("Data writing to file Successful\n")
+    print("Data written to file successfully\n")
     exit
 
 def terminateerror():
-    print("\nIncorrect Choice, Try Again")
+    print("\nIncorrect Choice, Try Again\n")
     interface()
 
 switcher = {
@@ -106,7 +140,7 @@ switcher = {
 }
 
 def interface():
-    choice=int(input("Welcome to Banking system. Enter a choice: \n1. Add new Account\n2. Delete an existing account\n3. Record a deposit\n4. Record a withdrawl\n5. Record a transfer\n6. Check balance of an account\n7. Exit\n"))
+    choice=int(input("Welcome to Banking system.\n1. Add new Account\n2. Delete an existing account\n3. Record a deposit\n4. Record a withdrawl\n5. Record a transfer\n6. Check balance of an account\n7. Exit\nEnter a choice: "))
     func = switcher.get(choice,terminateerror)
     func()
 
