@@ -22,7 +22,7 @@ class Current(Account):
         self.username=username
         self.pin=9999
         self.type="Current"
-    def calinterest(self):
+    def calcinterest(self):
         self.interest=float(self.balance+100)
 
 def addaccount():
@@ -47,7 +47,7 @@ def addaccount():
         uname=input("Enter unique username: ")
         id=sorted(data.keys())[-1]+1
         obj=Current(id,name,email,mob,bal,uname)
-        obj.calinterest()
+        obj.calcinterest()
         data[obj.id]=obj.__dict__
         print("New account successfully created with ID = "+str(obj.id)+"\n")
         interface()
