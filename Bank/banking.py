@@ -13,7 +13,7 @@ class Savings(Account):
         self.cheque=checque
         self.intrate=0.04
         self.type="Savings"
-    def cacinterest(self):
+    def calcinterest(self):
         self.interest=float(self.balance)+(float(self.balance)*self.intrate)
 
 class Current(Account):
@@ -35,7 +35,7 @@ def addaccount():
         id=sorted(data.keys())[-1]+1
         chqno=id+251000
         obj=Savings(id,name,email,mob,bal,chqno)
-        obj.cacinterest()
+        obj.calcinterest()
         data[obj.id]=obj.__dict__
         print("New account successfully created with ID = "+str(obj.id)+"\n")
         interface()
