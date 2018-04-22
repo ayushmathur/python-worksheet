@@ -1,0 +1,10 @@
+102=>{'balance': '23', 'intrate': 0.04, 'name': 'tyu', 'type': 'Savings', 'cheque': 251102, 'email': 'tyu@tyu', 'mobile': '12341234', 'id': 102}
+103=>{'balance': '90', 'pin': 9999, 'name': 'yui', 'username': 'tyuityu', 'type': 'Current', 'email': 'yui@yui', 'mobile': '67589', 'id': 103}
+104=>{'balance': '89', 'intrate': 0.04, 'name': 'han', 'type': 'Savings', 'cheque': 251104, 'email': 'solo@han.com', 'mobile': '67676767', 'id': 104}
+105=>{'balance': 'iaejh', 'intrate': 0.04, 'name': 'kdfjgn', 'type': 'Savings', 'cheque': 251105, 'email': 'slhj', 'mobile': 'shij', 'id': 105}
+106=>{'balance': 'aigj', 'intrate': 0.04, 'name': 'kjldfsgha', 'type': 'Savings', 'cheque': 251106, 'email': 'aigj', 'mobile': 'aoijh', 'id': 106}
+107=>{'balance': 624, 'intrate': 0.04, 'name': 'ldjfh', 'type': 'Savings', 'email': 'dsjh', 'interest': 624.0, 'cheque': 251107, 'mobile': 8686, 'id': 107}
+108=>{'balance': 624, 'intrate': 0.04, 'name': 'se;o', 'type': 'Savings', 'email': 'sldjbh', 'interest': 624.0, 'cheque': 251108, 'mobile': 'soghjb', 'id': 108}
+109=>{'balance': 900, 'pin': 9999, 'name': "ls'jht", 'username': 'slrjhn', 'type': 'Current', 'interest': 900, 'email': 'spijth', 'mobile': 'sprk', 'id': 109}
+110=>{'balance': 600, 'intrate': 0.04, 'type': 'Savings', 'name': ';dfljhn', 'cheque': 251110, 'interest': 624.0, 'email': 'ejshij', 'mobile': 'sgjhs', 'id': 110}
+111=>{'balance': 100, 'pin': 9999, 'type': 'Current', 'username': 'ltjh', 'name': 'shj', 'interest': 200, 'email': 'gpxkhjt', 'mobile': 'sopg', 'id': 111}
